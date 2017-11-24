@@ -30,9 +30,10 @@
 								</tr>
 							</thead>
 							<tbody>
+								{foreach $datas as $data }
 								<tr>
-									<td align="center">6</td>
-									<td align="center">test</td>
+									<td align="center">{$data.id}</td>
+									<td align="center">{$data.username}</td>
 									<td align="center">
 										<a href="__ROOT__/admin/admin/edit.html" class="btn btn-primary btn-sm shiny">
 											<i class="fa fa-edit"></i> 编辑
@@ -42,7 +43,7 @@
 										</a>
 									</td>
 								</tr>
-								
+								{/foreach}
 							</tbody>
 						</table>
 					</div>
