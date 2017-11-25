@@ -1,9 +1,9 @@
 <?php
 namespace app\admin\controller;
-use think\Controller;
+use app\admin\controller\Base;
 use app\admin\model\Admin as AdminModel;
 use app\admin\validate\Admin as AdminVal;
-class Admin extends Controller
+class Admin extends Base
 {
 	
     public function lists()
@@ -115,8 +115,13 @@ class Admin extends Controller
 		}
 	}
 	
-	
-	
+	public function logout(){
+		session(null);
+		$this->success('退出成功','admin/login/index');
+		
+		
+		
+	}
 	
 }
 

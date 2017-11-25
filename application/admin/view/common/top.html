@@ -26,19 +26,19 @@
                                 </div>
                                 <section>
                                 	
-                                    <h2><span class="profile"><span>admin</span></span></h2>
+                                    <h2><span class="profile"><span>{$Request.session.user}</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <li class="username"><a>David Stevenson</a></li>
                                 <li class="dropdown-footer">
-                                    <a href="/admin/user/logout.html">
+                                    <a href="__ROOT__/admin/admin/logout">
                                             退出登录
                                         </a>
                                 </li>
                                 <li class="dropdown-footer">
-                                    <a href="/admin/user/changePwd.html">
+                                    <a href="__ROOT__/admin/admin/edit?id={$Request.session.uid}">
                                             修改密码
                                         </a>
                                 </li>

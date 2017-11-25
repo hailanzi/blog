@@ -1,3 +1,5 @@
+{__NOLAYOUT__}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<!--Head-->
@@ -10,12 +12,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!--Basic Styles-->
-		<link href="__STATIC__/style/bootstrap.css" rel="stylesheet">
-		<link href="__STATIC__/style/font-awesome.css" rel="stylesheet">
+		<link href="__STATIC__/admin/style/bootstrap.css" rel="stylesheet">
+		<link href="__STATIC__/admin/style/font-awesome.css" rel="stylesheet">
 		<!--Beyond styles-->
-		<link id="beyond-link" href="__STATIC__/style/beyond.css" rel="stylesheet">
-		<link href="__STATIC__/style/demo.css" rel="stylesheet">
-		<link href="__STATIC__/style/animate.css" rel="stylesheet">
+		<link id="beyond-link" href="__STATIC__/admin/style/beyond.css" rel="stylesheet">
+		<link href="__STATIC__/admin/style/demo.css" rel="stylesheet">
+		<link href="__STATIC__/admin/style/animate.css" rel="stylesheet">
 	</head>
 	<!--Head Ends-->
 	<!--Body-->
@@ -24,32 +26,30 @@
 		<div class="login-container animated fadeInDown">
 			<form action="" method="post">
 				<div class="loginbox bg-white">
-					<div class="loginbox-title">SIGN IN</div>
+					<div class="loginbox-title">登入设置</div>
 					<div class="loginbox-textbox">
-						<input value="admin" class="form-control" placeholder="username" name="username" type="text">
+						<input value="admin" class="form-control" placeholder="账号" name="username" type="text">
 					</div>
 					<div class="loginbox-textbox">
-						<input class="form-control" placeholder="password" name="password" type="password">
+						<input class="form-control" placeholder="密码" name="password" type="password">
 					</div>
 					<div class="loginbox-textbox">
-						<input class="form-control" placeholder="code" name="code" style="margin:10px 0;width:80px;float:left;" type="text">
-						<img style="float:left; cursor:pointer;" src="{:captcha_src()}" alt="captcha" onclick="this.src='{:captcha_src()}?'+Math.random();" />
+						<input class="form-control" placeholder="输入验证码" name="code" style="margin:10px 0;width:80px;float:left;" type="text">
+						<img style="" src="{:captcha_src()}" alt="captcha" onclick="this.src='{:captcha_src()}?'+Math.random()" />
 					</div>
 					<div class="loginbox-submit">
 						<input class="btn btn-primary btn-block" value="Login" type="submit">
 					</div>
 				</div>
-				<div class="logobox">
-					<p class="text-center">童老师ThinkPHP交流群：4845194464</p>
-				</div>
+				
 			</form>
 		</div>
 		<!--Basic Scripts-->
-		<script src="__STATIC__/style/jquery.js"></script>
-		<script src="__STATIC__/style/bootstrap.js"></script>
-		<script src="__STATIC__/style/jquery_002.js"></script>
+		<script src="__STATIC__/admin/style/jquery.js"></script>
+		<script src="__STATIC__/admin/style/bootstrap.js"></script>
+		<script src="__STATIC__/admin/style/jquery_002.js"></script>
 		<!--Beyond Scripts-->
-		<script src="__STATIC__/style/beyond.js"></script>
+		<script src="__STATIC__/admin/style/beyond.js"></script>
 
 	</body>
 	<!--Body Ends-->

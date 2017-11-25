@@ -681,17 +681,21 @@ class Validate
      */
     protected function fileExt($file, $rule)
     {
+        if (!($file instanceof File)) {
+            return false;
+        }
+        if (is_string($rule)) {
+            $rule = explode(',', $rule);
+        }
         if (is_array($file)) {
             foreach ($file as $item) {
-                if (!($item instanceof File) || !$item->checkExt($rule)) {
+                if (!$item->checkExt($rule)) {
                     return false;
                 }
             }
             return true;
-        } elseif ($file instanceof File) {
-            return $file->checkExt($rule);
         } else {
-            return false;
+            return $file->checkExt($rule);
         }
     }
 
@@ -704,17 +708,21 @@ class Validate
      */
     protected function fileMime($file, $rule)
     {
+        if (!($file instanceof File)) {
+            return false;
+        }
+        if (is_string($rule)) {
+            $rule = explode(',', $rule);
+        }
         if (is_array($file)) {
             foreach ($file as $item) {
-                if (!($item instanceof File) || !$item->checkMime($rule)) {
+                if (!$item->checkMime($rule)) {
                     return false;
                 }
             }
             return true;
-        } elseif ($file instanceof File) {
-            return $file->checkMime($rule);
         } else {
-            return false;
+            return $file->checkMime($rule);
         }
     }
 
@@ -727,17 +735,18 @@ class Validate
      */
     protected function fileSize($file, $rule)
     {
+        if (!($file instanceof File)) {
+            return false;
+        }
         if (is_array($file)) {
             foreach ($file as $item) {
-                if (!($item instanceof File) || !$item->checkSize($rule)) {
+                if (!$item->checkSize($rule)) {
                     return false;
                 }
             }
             return true;
-        } elseif ($file instanceof File) {
-            return $file->checkSize($rule);
         } else {
-            return false;
+            return $file->checkSize($rule);
         }
     }
 
