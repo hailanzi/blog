@@ -15,17 +15,31 @@
 		<div class="col-lg-12 col-sm-12 col-xs-12">
 			<div class="widget">
 				<div class="widget-header bordered-bottom bordered-blue">
-					<span class="widget-caption">新增栏目</span>
+					<span class="widget-caption">新增链接</span>
 				</div>
 				<div class="widget-body">
 					<div id="horizontal-form">
 						<form class="form-horizontal" role="form" action="" method="post">
 							<div class="form-group">
-								<label for="username" class="col-sm-2 control-label no-padding-right">栏目名</label>
+								<label for="username" class="col-sm-2 control-label no-padding-right">链接标题</label>
 								<div class="col-sm-6">
-									<input class="form-control" id="username" placeholder="" name="cateeditname" value="{$data.catename}" required="" type="text">
+									<input class="form-control" id="username" placeholder="" name="title" value="{$data.title}" required="" type="text">
 								</div>
 								<p class="help-block col-sm-4 red">* 必填</p>
+							</div>
+							<div class="form-group">
+								<label for="username" class="col-sm-2 control-label no-padding-right">链接地址</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="username" placeholder="" name="url" required="" value="{$data.url}" type="text">
+								</div>
+								<p class="help-block col-sm-4 red">* 必填</p>
+							</div>
+							<div class="form-group">
+								<label for="group_id" class="col-sm-2 control-label no-padding-right">链接描述</label>
+									<div class="col-sm-6">
+										<textarea name="desc" class="form-control">{$data.desc}</textarea>
+									</div>
+								
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
