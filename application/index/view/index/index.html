@@ -1,3 +1,4 @@
+<div class="position"></div>
 <div class="overall">
 
 	<div class="left">
@@ -20,8 +21,8 @@
 
 				
 				
-				<h3><a target="_blank" href="20160920156274.html">{$article.title}</a></h3>
-				<div class="time">发布时间：2016-09-20</div>
+				<h3><a target="_blank" href="{:url('/index/article/index',array('aid' => $article['id']))}">{$article.title}</a></h3>
+				<div class="time">发布时间：{$article.time|date="y-m-d",###}</div>
 				<p>
 					{$article.desc}
 					
