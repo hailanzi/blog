@@ -45,17 +45,23 @@
 									{/switch}
 									</td>
 									<td align="center">
-										暂无缩略图
+										{if condition="$dataArticle.pic eq ''"}
+											<span>暂无缩略图</span>
+										{else /}
+											<img src="__ROOT__/uploads/{$dataArticle.pic}"  height="50px"/>
+										{/if}
+										
 									</td>
 									
 									<th class="text-center">{$dataArticle.cate.catename}</th>
 									<td align="center">
-										<a href="__ROOT__/admin/article/edit" class="btn btn-primary btn-sm shiny">
+										<a href="__ROOT__/admin/article/edit?id={$dataArticle.id}" class="btn btn-primary btn-sm shiny">
 											<i class="fa fa-edit"></i> 编辑
 										</a>
-										<a href="#" onclick="warning('确实要删除吗', '__ROOT__/admin/article/edit')" class="btn btn-danger btn-sm shiny">
+										<a href="#" onclick="warning('确实要删除吗', '__ROOT__/admin/article/del?id={$dataArticle.id}')" class="btn btn-danger btn-sm shiny">
 											<i class="fa fa-trash-o"></i> 删除
 										</a>
+										
 									</td>
 								</tr>
 								{/foreach}
@@ -64,16 +70,7 @@
 						</table>
 					</div>
 					<div style="text-align:right; margin-top:10px;">
-						<ul class="pagination">
-							<li class="disabled"><span>«</span></li>
-							<li class="active"><span>1</span></li>
-							<li>
-								<a href="/blogtp5/public/admin/article/lst.html?page=2">2</a>
-							</li>
-							<li>
-								<a href="/blogtp5/public/admin/article/lst.html?page=2">»</a>
-							</li>
-						</ul>
+						{$page}
 					</div>
 				</div>
 			</div>
