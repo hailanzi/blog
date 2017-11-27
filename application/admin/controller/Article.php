@@ -50,6 +50,11 @@ class Article extends Base
 			die;
 		}
 		
+		if(!$_FILES['pic']['error'])
+		
+		{
+			
+			
 		$file=request()->file('pic');
        	if($file)
        	{
@@ -66,6 +71,15 @@ class Article extends Base
        			echo $file->getError();
        		}
        	}
+			
+		}
+		
+		else
+		{
+			$data['pic']='';
+			
+		}
+		
        	
        	
      	if(db('article')->insert($data))
