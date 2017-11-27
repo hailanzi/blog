@@ -6,8 +6,9 @@ class Article extends Base
     public function index()
     {
     	
-		input('aid');
-		
+		$id=input('aid');
+		$data=db('article')->find($id);
+        $this->assign('data',$data);
         return $this->fetch();
     }
 }
