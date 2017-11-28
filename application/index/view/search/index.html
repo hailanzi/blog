@@ -1,0 +1,60 @@
+
+<div class="position"></div>
+<div class="overall">
+	<div class="position">搜索：<span style="color:#f00; font-weight:bold;">{$keywords}</span> </div>
+	<div class="left">
+		{if condition="( $searchres == null )"}
+		
+			
+		
+		{else /}
+		
+			{foreach $searchres as $searchre}
+			<div class="xnews2">
+				<div class="pic">
+					<a target="_blank" href="20160920156274.html">
+					{if condition="($searchre.pic == '')"}
+						<img src="__STATIC__/index/images/error.png"  width="100%" />
+					{else /}
+						<img src="__ROOT__/uploads/"  />
+					{/if}
+					</a>
+				</div>
+				<div class="dec">
+					
+	
+					
+					
+					<h3><a target="_blank" href="{:url('/index/article/index',array('aid' => $searchre['id']))}">{$searchre.title}</a></h3>
+					<div class="time">发布时间：{$searchre.time|date="y-m-d",###}</div>
+					<p>
+						{$searchre.desc}
+						
+					</p>
+					<div class="time">
+						<?php 
+							
+							$akeywords=explode('，',$searchre['keywords']);	
+							
+							foreach( $akeywords as $key=>$val)
+							{
+								echo "<a href='z95926.html'>".$val."</a>";
+							}
+							
+							
+						?>
+						
+					</div>
+					
+				</div>
+			</div>
+			{/foreach}	
+		
+		{/if}
+		
+		<div class="pages">
+			<div class="plist">
+				
+			</div>
+		</div>
+	</div>

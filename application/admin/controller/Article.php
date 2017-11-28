@@ -111,7 +111,8 @@ class Article extends Base
 	       	'author' => input('author'),
 	       	'cateid' => input('cateid'), 	
 	       	'content' => input('content'),
-	       	'time' => time()
+	       	'time' => time(),
+	       	 'id'=>input('id')
        	
        	];
        
@@ -155,7 +156,7 @@ class Article extends Base
 	        $dataedit['pic']=$data['pic'];
 	       	}
        		
-       	if(db('article')->insert($dataedit))
+       	if(db('article')->update($dataedit))
        	{
        		$this->success('编辑成功','admin/article/lists');
        	}

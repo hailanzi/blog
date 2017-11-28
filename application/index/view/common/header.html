@@ -5,9 +5,9 @@
                 <div class="left"><a href=""><img src="__STATIC__/index/images/hunshang.png" alt="wed114婚尚"></a></div>
                 <div class="right">
                 <div class="box">
-                 
+                  <a href="{:url('index/index/index')}"  rel='dropmenu209'>首页</a> 
                 {foreach $catesheader as $cateheader}
-                 <a href="hunjia/"  rel='dropmenu209'>{$cateheader.catename}</a> 
+                 <a href="{:url('index/cate/index',array('cid'=>$cateheader.id))}" >{$cateheader.catename}</a> 
                  {/foreach}
                 </div>
                 </div>
@@ -20,7 +20,7 @@
 	<div class="con">热门标签：
 	{foreach $tagsheader as $tagheader}	
 		
-	<a href='qiwenqushi/'>{$tagheader.tagname}</a> 
+	<a href={:url('index/search/index',array('keywords'=>$tagheader.id))}>{$tagheader.tagname}</a> 
 	{/foreach}
 </div>
 
