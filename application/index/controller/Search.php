@@ -3,7 +3,7 @@ namespace app\index\controller;
 use app\index\controller\Base;
 class Search extends Base
 {
-    public function index()
+	 public function index()
     {
     	
     	if(request()->isGet())
@@ -36,4 +36,39 @@ class Search extends Base
     	return $this->fetch();
     	
     }
+	 public function keys()
+    {
+    	
+    	if(request()->isGet())
+    	{
+    		$keywords=input('keywords');
+    	
+    		$map['title']=['like','%'.$keywords.'%'];
+    		$searchres=db('article')->where($map)->select();
+    		
+    		if($searchres)
+    		{
+    			$this->assign(array(
+                'searchres'=>$searchres,
+                'keywords'=>$keywords
+                
+                ));
+    		}
+    		 
+                
+            else
+	    	{
+	    		$this->assign(array(
+	            'searchres'=>null,
+	            'keywords'=>'暂无数据'
+	             ));
+	    	}    
+    	}
+    	
+    	
+    	return $this->fetch();
+    	
+    }
+	
+   
 }
